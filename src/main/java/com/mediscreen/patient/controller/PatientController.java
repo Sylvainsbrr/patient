@@ -69,6 +69,7 @@ public class PatientController {
     @ApiResponses(value = {@ApiResponse(code = 404, message = "Patient with id { id } to delete doesn't exist")})
     @DeleteMapping(value = "/patient/{id}")
     public ResponseEntity<String> deletePatient(@PathVariable("id") int id) {
+        System.out.println(id);
         String response = patientService.deletePatient(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body(response);
     }
